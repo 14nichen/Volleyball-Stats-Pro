@@ -21,6 +21,9 @@
 		837CC3DF18EE1FA200BB7DF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837CC3C118EE1FA200BB7DF7 /* UIKit.framework */; };
 		837CC3E718EE1FA200BB7DF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 837CC3E518EE1FA200BB7DF7 /* InfoPlist.strings */; };
 		837CC3E918EE1FA200BB7DF7 /* Volleyball_Stats_ProTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 837CC3E818EE1FA200BB7DF7 /* Volleyball_Stats_ProTests.m */; };
+		839A581A1905DB6F00512E52 /* Player.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 839A58181905DB6F00512E52 /* Player.xcdatamodeld */; };
+		839A581D1905DD6E00512E52 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 839A581C1905DD6E00512E52 /* Player.m */; };
+		839A582D1905DEAC00512E52 /* Player+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 839A582C1905DEAC00512E52 /* Player+Create.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,11 @@
 		837CC3E418EE1FA200BB7DF7 /* Volleyball Stats ProTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Volleyball Stats ProTests-Info.plist"; sourceTree = "<group>"; };
 		837CC3E618EE1FA200BB7DF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		837CC3E818EE1FA200BB7DF7 /* Volleyball_Stats_ProTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Volleyball_Stats_ProTests.m; sourceTree = "<group>"; };
+		839A58191905DB6F00512E52 /* Player.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Player.xcdatamodel; sourceTree = "<group>"; };
+		839A581B1905DD6E00512E52 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		839A581C1905DD6E00512E52 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		839A582B1905DEAC00512E52 /* Player+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Player+Create.h"; sourceTree = "<group>"; };
+		839A582C1905DEAC00512E52 /* Player+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Player+Create.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +120,11 @@
 		837CC3C318EE1FA200BB7DF7 /* Volleyball Stats Pro */ = {
 			isa = PBXGroup;
 			children = (
+				839A582A1905DE7A00512E52 /* Customized */,
 				837CC3CC18EE1FA200BB7DF7 /* VBAppDelegate.h */,
 				837CC3CD18EE1FA200BB7DF7 /* VBAppDelegate.m */,
 				837CC3CF18EE1FA200BB7DF7 /* Main.storyboard */,
+				839A58181905DB6F00512E52 /* Player.xcdatamodeld */,
 				837CC3D218EE1FA200BB7DF7 /* VBViewController.h */,
 				837CC3D318EE1FA200BB7DF7 /* VBViewController.m */,
 				837CC3D518EE1FA200BB7DF7 /* Images.xcassets */,
@@ -150,6 +160,17 @@
 				837CC3E518EE1FA200BB7DF7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		839A582A1905DE7A00512E52 /* Customized */ = {
+			isa = PBXGroup;
+			children = (
+				839A581B1905DD6E00512E52 /* Player.h */,
+				839A581C1905DD6E00512E52 /* Player.m */,
+				839A582B1905DEAC00512E52 /* Player+Create.h */,
+				839A582C1905DEAC00512E52 /* Player+Create.m */,
+			);
+			name = Customized;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +218,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = VB;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Nikolai Chen";
 				TargetAttributes = {
 					837CC3DA18EE1FA200BB7DF7 = {
@@ -250,9 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				839A582D1905DEAC00512E52 /* Player+Create.m in Sources */,
+				839A581A1905DB6F00512E52 /* Player.xcdatamodeld in Sources */,
 				837CC3CE18EE1FA200BB7DF7 /* VBAppDelegate.m in Sources */,
 				837CC3D418EE1FA200BB7DF7 /* VBViewController.m in Sources */,
 				837CC3CA18EE1FA200BB7DF7 /* main.m in Sources */,
+				839A581D1905DD6E00512E52 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +330,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -346,7 +369,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -405,7 +427,6 @@
 		837CC3F018EE1FA200BB7DF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Volleyball Stats Pro.app/Volleyball Stats Pro";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -428,7 +449,6 @@
 		837CC3F118EE1FA200BB7DF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Volleyball Stats Pro.app/Volleyball Stats Pro";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -463,6 +483,7 @@
 				837CC3EE18EE1FA200BB7DF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		837CC3EF18EE1FA200BB7DF7 /* Build configuration list for PBXNativeTarget "Volleyball Stats ProTests" */ = {
 			isa = XCConfigurationList;
@@ -471,8 +492,22 @@
 				837CC3F118EE1FA200BB7DF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		839A58181905DB6F00512E52 /* Player.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				839A58191905DB6F00512E52 /* Player.xcdatamodel */,
+			);
+			currentVersion = 839A58191905DB6F00512E52 /* Player.xcdatamodel */;
+			path = Player.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 837CC3B218EE1FA200BB7DF7 /* Project object */;
 }

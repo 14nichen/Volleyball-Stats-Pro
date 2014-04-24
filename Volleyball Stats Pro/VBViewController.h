@@ -10,4 +10,6 @@
 
 @interface VBViewController : UIViewController
 
+@property (nonatomic, strong) NSManagedObjectContext *context;
+
 @end
