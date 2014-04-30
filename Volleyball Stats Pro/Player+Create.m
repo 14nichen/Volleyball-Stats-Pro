@@ -16,11 +16,17 @@
     if ([lastName length]) {
 
         //        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Player"];
-        //        request.predicate = [NSPredicate predicateWithFormat:@"name = %@", lastName];
 
         NSFetchRequest *fetchRequest = [NSFetchRequest new];
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Player" inManagedObjectContext:managedObjectContext];
         [fetchRequest setEntity:entity];
+        
+        
+        NSPredicate *last = [NSPredicate predicateWithFormat:@"last_name = %@", lastName];
+        NSPredicate *first = [NSPredicate predicateWithFormat:@"first_name = %@", firstName];
+        
+//        NSCompoundPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[last, first]];
+        fetchRequest.predicate=[NSCompoundPredicate andPredicateWithSubpredicates:@[last, first]];
         
         NSError *error;
         NSArray *matches = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
@@ -30,7 +36,7 @@
             NSAssert(NO, @"wrong number of player matches returned.");
             
         } else if ([matches count] == 0) {
-            NSLog(@"Creating new Player: %@", lastName);
+            NSLog(@"Creating new Player: %@, %@", lastName, firstName);
             player = [NSEntityDescription insertNewObjectForEntityForName:@"Player"
                                                   inManagedObjectContext:managedObjectContext];
             player.last_name = lastName;
@@ -49,7 +55,7 @@
     NSArray *players = nil;
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Player"];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"last_name" ascending:YES]];
     
     NSError *error;
     NSArray *matches = [context executeFetchRequest:request error:&error];

@@ -24,6 +24,7 @@
 		839A581A1905DB6F00512E52 /* Player.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 839A58181905DB6F00512E52 /* Player.xcdatamodeld */; };
 		839A581D1905DD6E00512E52 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 839A581C1905DD6E00512E52 /* Player.m */; };
 		839A582D1905DEAC00512E52 /* Player+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 839A582C1905DEAC00512E52 /* Player+Create.m */; };
+		83DCCD7D19106BF000A4DC6E /* VBPlayerTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DCCD7C19106BF000A4DC6E /* VBPlayerTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		839A581C1905DD6E00512E52 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		839A582B1905DEAC00512E52 /* Player+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Player+Create.h"; sourceTree = "<group>"; };
 		839A582C1905DEAC00512E52 /* Player+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Player+Create.m"; sourceTree = "<group>"; };
+		83DCCD7B19106BF000A4DC6E /* VBPlayerTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBPlayerTVC.h; sourceTree = "<group>"; };
+		83DCCD7C19106BF000A4DC6E /* VBPlayerTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBPlayerTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				839A581C1905DD6E00512E52 /* Player.m */,
 				839A582B1905DEAC00512E52 /* Player+Create.h */,
 				839A582C1905DEAC00512E52 /* Player+Create.m */,
+				83DCCD7B19106BF000A4DC6E /* VBPlayerTVC.h */,
+				83DCCD7C19106BF000A4DC6E /* VBPlayerTVC.m */,
 			);
 			name = Customized;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				839A582D1905DEAC00512E52 /* Player+Create.m in Sources */,
+				83DCCD7D19106BF000A4DC6E /* VBPlayerTVC.m in Sources */,
 				839A581A1905DB6F00512E52 /* Player.xcdatamodeld in Sources */,
 				837CC3CE18EE1FA200BB7DF7 /* VBAppDelegate.m in Sources */,
 				837CC3D418EE1FA200BB7DF7 /* VBViewController.m in Sources */,

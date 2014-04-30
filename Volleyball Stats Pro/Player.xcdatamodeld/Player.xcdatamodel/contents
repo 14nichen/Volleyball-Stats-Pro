@@ -6,7 +6,9 @@
         <attribute name="last_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="position" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Team" syncable="YES"/>
     <elements>
         <element name="Player" positionX="-1492" positionY="-1329" width="97" height="103"/>
+        <element name="Team" positionX="-1638" positionY="-1386" width="128" height="43"/>
     </elements>
 </model>
