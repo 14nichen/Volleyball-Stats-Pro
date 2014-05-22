@@ -7,10 +7,11 @@
 //
 
 #import "Player+Create.h"
+#import "Game+Create.h"
 
 @implementation Player (Create)
 
-+ (Player *)createPlayerWithName:(NSString *)lastName firstName:(NSString *)firstName jerseyNumber:(NSNumber*)jerseyNumber position:(NSString *)position managedObjectContext:(NSManagedObjectContext *)managedObjectContext
++ (Player *)createPlayerWithName:(NSString *)lastName firstName:(NSString *)firstName jerseyNumber:(NSNumber*)jerseyNumber position:(NSString *)position heightFeet:(NSNumber *)heightFeet heightInches:(NSNumber *)heightInches managedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
     Player *player = nil;
     if ([lastName length]) {
@@ -43,6 +44,8 @@
             player.first_name = firstName;
             player.jersey_number = jerseyNumber;
             player.position = position;
+            player.height_feet = heightFeet;
+            player.height_inches = heightInches;
         } else {
             player = [matches lastObject];
         }
@@ -72,4 +75,60 @@
     return players;
 }
 
+- (NSString *)humanHeight
+{
+    NSString *height = [NSString stringWithFormat:@"%i'%i", [self.height_feet intValue], [self.height_inches intValue]];
+    return height;
+}
+
+- (NSString *)fullName
+{
+    return [NSString stringWithFormat:@"%@ %@", self.first_name, self.last_name];
+}
+
+- (Stats *) statsWithGame:(Game *) game
+{
+    Stats *stats = nil;
+    NSFetchRequest *fetchRequest = [NSFetchRequest new];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Stats" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *gamePredicate = [NSPredicate predicateWithFormat:@"game = %@", game];
+    NSPredicate *playerPredicate = [NSPredicate predicateWithFormat:@"player = %@", self];
+    
+    //        NSCompoundPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[last, first]];
+    fetchRequest.predicate=[NSCompoundPredicate andPredicateWithSubpredicates:@[gamePredicate, playerPredicate]];
+    
+    NSError *error;
+    NSArray *matches = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (matches && ([matches count] > 0)) {
+        // handle error
+        stats = [matches lastObject];
+        
+    }    return stats;
+}
+
++ (NSDictionary *)totalsForStatsArray:(NSArray *)statsArray
+{
+    NSMutableDictionary *totals = [@{@"kills":@(0),
+                                     @"blocks":@(0),
+                                     @"digs":@(0),
+                                     @"aces":@(0),
+                                     @"assists":@(0)} mutableCopy];
+    if (!([statsArray count] == 0)) {
+        for (Stats* stat in statsArray) {
+            totals[@"kills"] = @([totals[@"kills"] intValue] + [stat.kills intValue]);
+            totals[@"blocks"] = @([totals[@"blocks"] intValue] + [stat.blocks intValue]);
+            totals[@"digs"] = @([totals[@"digs"] intValue] + [stat.digs intValue]);
+            totals[@"aces"] = @([totals[@"aces"] intValue] + [stat.aces intValue]);
+            totals[@"assists"] = @([totals[@"assists"] intValue] + [stat.assists intValue]);
+        }
+    }
+        return [NSDictionary dictionaryWithDictionary:totals];
+}
+
+- (NSDictionary *) allStats
+{
+    return [Player totalsForStatsArray:[self.stats allObjects]];
+}
 @end

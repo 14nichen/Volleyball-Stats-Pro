@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83389AAF192C18AF00A7E9BF /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 83389AAE192C18AF00A7E9BF /* Player.m */; };
+		83389AB5192C18B000A7E9BF /* Stats.m in Sources */ = {isa = PBXBuildFile; fileRef = 83389AB4192C18B000A7E9BF /* Stats.m */; };
+		83389AB8192C18D800A7E9BF /* Team+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 83389AB7192C18D800A7E9BF /* Team+Create.m */; };
+		83389ABE192C1BBC00A7E9BF /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 83389ABD192C1BBC00A7E9BF /* Team.m */; };
+		8338CA6D191C4D7F003450C2 /* VBPlayerCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8338CA6C191C4D7F003450C2 /* VBPlayerCVC.m */; };
+		833A22A11919A43900626A12 /* Stats+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 833A22A01919A43900626A12 /* Stats+Create.m */; };
+		8363F89119185297003DE4FA /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 8363F89019185297003DE4FA /* Game.m */; };
+		8363F89B19185317003DE4FA /* Game+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 8363F89A19185317003DE4FA /* Game+Create.m */; };
 		837CC3BE18EE1FA200BB7DF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837CC3BD18EE1FA200BB7DF7 /* Foundation.framework */; };
 		837CC3C018EE1FA200BB7DF7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837CC3BF18EE1FA200BB7DF7 /* CoreGraphics.framework */; };
 		837CC3C218EE1FA200BB7DF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837CC3C118EE1FA200BB7DF7 /* UIKit.framework */; };
@@ -21,10 +29,16 @@
 		837CC3DF18EE1FA200BB7DF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837CC3C118EE1FA200BB7DF7 /* UIKit.framework */; };
 		837CC3E718EE1FA200BB7DF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 837CC3E518EE1FA200BB7DF7 /* InfoPlist.strings */; };
 		837CC3E918EE1FA200BB7DF7 /* Volleyball_Stats_ProTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 837CC3E818EE1FA200BB7DF7 /* Volleyball_Stats_ProTests.m */; };
+		838B5CA6192C2851001DF6F8 /* VBMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 838B5CA5192C2851001DF6F8 /* VBMenuVC.m */; };
+		83980EE2191D9A46001C205E /* VBStatCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83980EE1191D9A46001C205E /* VBStatCVCell.xib */; };
+		83980EE5191D9AEA001C205E /* VBStatCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83980EE4191D9AEA001C205E /* VBStatCVCell.m */; };
+		83988AA41911BA4E0000FE95 /* VBTeamTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83988AA31911BA4E0000FE95 /* VBTeamTVC.m */; };
 		839A581A1905DB6F00512E52 /* Player.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 839A58181905DB6F00512E52 /* Player.xcdatamodeld */; };
-		839A581D1905DD6E00512E52 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 839A581C1905DD6E00512E52 /* Player.m */; };
 		839A582D1905DEAC00512E52 /* Player+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 839A582C1905DEAC00512E52 /* Player+Create.m */; };
+		83A95BA31925494800F966A7 /* VBStatsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A95BA21925494800F966A7 /* VBStatsTVC.m */; };
 		83DCCD7D19106BF000A4DC6E /* VBPlayerTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DCCD7C19106BF000A4DC6E /* VBPlayerTVC.m */; };
+		83F49F051926E1090016071C /* VBStatsHistoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F49F041926E1090016071C /* VBStatsHistoryTVC.m */; };
+		83F49F081926E7840016071C /* VBGameTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F49F071926E7840016071C /* VBGameTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +52,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		83389AAD192C18AF00A7E9BF /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		83389AAE192C18AF00A7E9BF /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		83389AB3192C18B000A7E9BF /* Stats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stats.h; sourceTree = "<group>"; };
+		83389AB4192C18B000A7E9BF /* Stats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stats.m; sourceTree = "<group>"; };
+		83389AB6192C18D800A7E9BF /* Team+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Team+Create.h"; sourceTree = "<group>"; };
+		83389AB7192C18D800A7E9BF /* Team+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Team+Create.m"; sourceTree = "<group>"; };
+		83389ABC192C1BBC00A7E9BF /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Team.h; path = ../Team.h; sourceTree = "<group>"; };
+		83389ABD192C1BBC00A7E9BF /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Team.m; path = ../Team.m; sourceTree = "<group>"; };
+		8338CA6B191C4D7F003450C2 /* VBPlayerCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBPlayerCVC.h; sourceTree = "<group>"; };
+		8338CA6C191C4D7F003450C2 /* VBPlayerCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBPlayerCVC.m; sourceTree = "<group>"; };
+		833A229F1919A43900626A12 /* Stats+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Stats+Create.h"; sourceTree = "<group>"; };
+		833A22A01919A43900626A12 /* Stats+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Stats+Create.m"; sourceTree = "<group>"; };
+		8363F88F19185297003DE4FA /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = ../Game.h; sourceTree = "<group>"; };
+		8363F89019185297003DE4FA /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = ../Game.m; sourceTree = "<group>"; };
+		8363F89919185317003DE4FA /* Game+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Game+Create.h"; sourceTree = "<group>"; };
+		8363F89A19185317003DE4FA /* Game+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Game+Create.m"; sourceTree = "<group>"; };
 		837CC3BA18EE1FA200BB7DF7 /* Volleyball Stats Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Volleyball Stats Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		837CC3BD18EE1FA200BB7DF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		837CC3BF18EE1FA200BB7DF7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -57,13 +87,24 @@
 		837CC3E418EE1FA200BB7DF7 /* Volleyball Stats ProTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Volleyball Stats ProTests-Info.plist"; sourceTree = "<group>"; };
 		837CC3E618EE1FA200BB7DF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		837CC3E818EE1FA200BB7DF7 /* Volleyball_Stats_ProTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Volleyball_Stats_ProTests.m; sourceTree = "<group>"; };
+		838B5CA4192C2851001DF6F8 /* VBMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBMenuVC.h; sourceTree = "<group>"; };
+		838B5CA5192C2851001DF6F8 /* VBMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBMenuVC.m; sourceTree = "<group>"; };
+		83980EE1191D9A46001C205E /* VBStatCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VBStatCVCell.xib; sourceTree = "<group>"; };
+		83980EE3191D9AEA001C205E /* VBStatCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBStatCVCell.h; sourceTree = "<group>"; };
+		83980EE4191D9AEA001C205E /* VBStatCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBStatCVCell.m; sourceTree = "<group>"; };
+		83988AA21911BA4E0000FE95 /* VBTeamTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBTeamTVC.h; sourceTree = "<group>"; };
+		83988AA31911BA4E0000FE95 /* VBTeamTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBTeamTVC.m; sourceTree = "<group>"; };
 		839A58191905DB6F00512E52 /* Player.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Player.xcdatamodel; sourceTree = "<group>"; };
-		839A581B1905DD6E00512E52 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		839A581C1905DD6E00512E52 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		839A582B1905DEAC00512E52 /* Player+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Player+Create.h"; sourceTree = "<group>"; };
 		839A582C1905DEAC00512E52 /* Player+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Player+Create.m"; sourceTree = "<group>"; };
+		83A95BA11925494800F966A7 /* VBStatsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBStatsTVC.h; sourceTree = "<group>"; };
+		83A95BA21925494800F966A7 /* VBStatsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBStatsTVC.m; sourceTree = "<group>"; };
 		83DCCD7B19106BF000A4DC6E /* VBPlayerTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBPlayerTVC.h; sourceTree = "<group>"; };
 		83DCCD7C19106BF000A4DC6E /* VBPlayerTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBPlayerTVC.m; sourceTree = "<group>"; };
+		83F49F031926E1090016071C /* VBStatsHistoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBStatsHistoryTVC.h; sourceTree = "<group>"; };
+		83F49F041926E1090016071C /* VBStatsHistoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBStatsHistoryTVC.m; sourceTree = "<group>"; };
+		83F49F061926E7840016071C /* VBGameTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBGameTVC.h; sourceTree = "<group>"; };
+		83F49F071926E7840016071C /* VBGameTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBGameTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +164,7 @@
 		837CC3C318EE1FA200BB7DF7 /* Volleyball Stats Pro */ = {
 			isa = PBXGroup;
 			children = (
+				83F49F091926E7A30016071C /* Table View Controllers */,
 				839A582A1905DE7A00512E52 /* Customized */,
 				837CC3CC18EE1FA200BB7DF7 /* VBAppDelegate.h */,
 				837CC3CD18EE1FA200BB7DF7 /* VBAppDelegate.m */,
@@ -168,14 +210,48 @@
 		839A582A1905DE7A00512E52 /* Customized */ = {
 			isa = PBXGroup;
 			children = (
-				839A581B1905DD6E00512E52 /* Player.h */,
-				839A581C1905DD6E00512E52 /* Player.m */,
+				83389AAD192C18AF00A7E9BF /* Player.h */,
+				83389AAE192C18AF00A7E9BF /* Player.m */,
+				83389AB3192C18B000A7E9BF /* Stats.h */,
+				83389AB4192C18B000A7E9BF /* Stats.m */,
+				8363F88F19185297003DE4FA /* Game.h */,
+				8363F89019185297003DE4FA /* Game.m */,
+				83389ABC192C1BBC00A7E9BF /* Team.h */,
+				83389ABD192C1BBC00A7E9BF /* Team.m */,
 				839A582B1905DEAC00512E52 /* Player+Create.h */,
 				839A582C1905DEAC00512E52 /* Player+Create.m */,
-				83DCCD7B19106BF000A4DC6E /* VBPlayerTVC.h */,
-				83DCCD7C19106BF000A4DC6E /* VBPlayerTVC.m */,
+				833A229F1919A43900626A12 /* Stats+Create.h */,
+				833A22A01919A43900626A12 /* Stats+Create.m */,
+				8363F89919185317003DE4FA /* Game+Create.h */,
+				8363F89A19185317003DE4FA /* Game+Create.m */,
+				83389AB6192C18D800A7E9BF /* Team+Create.h */,
+				83389AB7192C18D800A7E9BF /* Team+Create.m */,
+				838B5CA4192C2851001DF6F8 /* VBMenuVC.h */,
+				838B5CA5192C2851001DF6F8 /* VBMenuVC.m */,
+				8338CA6B191C4D7F003450C2 /* VBPlayerCVC.h */,
+				8338CA6C191C4D7F003450C2 /* VBPlayerCVC.m */,
+				83980EE3191D9AEA001C205E /* VBStatCVCell.h */,
+				83980EE4191D9AEA001C205E /* VBStatCVCell.m */,
+				83980EE1191D9A46001C205E /* VBStatCVCell.xib */,
 			);
 			name = Customized;
+			sourceTree = "<group>";
+		};
+		83F49F091926E7A30016071C /* Table View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				83DCCD7B19106BF000A4DC6E /* VBPlayerTVC.h */,
+				83DCCD7C19106BF000A4DC6E /* VBPlayerTVC.m */,
+				83988AA21911BA4E0000FE95 /* VBTeamTVC.h */,
+				83988AA31911BA4E0000FE95 /* VBTeamTVC.m */,
+				83A95BA11925494800F966A7 /* VBStatsTVC.h */,
+				83A95BA21925494800F966A7 /* VBStatsTVC.m */,
+				83F49F031926E1090016071C /* VBStatsHistoryTVC.h */,
+				83F49F041926E1090016071C /* VBStatsHistoryTVC.m */,
+				83F49F061926E7840016071C /* VBGameTVC.h */,
+				83F49F071926E7840016071C /* VBGameTVC.m */,
+			);
+			name = "Table View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +333,7 @@
 			files = (
 				837CC3D618EE1FA200BB7DF7 /* Images.xcassets in Resources */,
 				837CC3C818EE1FA200BB7DF7 /* InfoPlist.strings in Resources */,
+				83980EE2191D9A46001C205E /* VBStatCVCell.xib in Resources */,
 				837CC3D118EE1FA200BB7DF7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,13 +353,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83389AAF192C18AF00A7E9BF /* Player.m in Sources */,
 				839A582D1905DEAC00512E52 /* Player+Create.m in Sources */,
 				83DCCD7D19106BF000A4DC6E /* VBPlayerTVC.m in Sources */,
+				83988AA41911BA4E0000FE95 /* VBTeamTVC.m in Sources */,
+				83389AB8192C18D800A7E9BF /* Team+Create.m in Sources */,
+				83F49F051926E1090016071C /* VBStatsHistoryTVC.m in Sources */,
+				83A95BA31925494800F966A7 /* VBStatsTVC.m in Sources */,
+				8363F89119185297003DE4FA /* Game.m in Sources */,
+				83389ABE192C1BBC00A7E9BF /* Team.m in Sources */,
 				839A581A1905DB6F00512E52 /* Player.xcdatamodeld in Sources */,
+				8363F89B19185317003DE4FA /* Game+Create.m in Sources */,
+				838B5CA6192C2851001DF6F8 /* VBMenuVC.m in Sources */,
+				83389AB5192C18B000A7E9BF /* Stats.m in Sources */,
+				83F49F081926E7840016071C /* VBGameTVC.m in Sources */,
 				837CC3CE18EE1FA200BB7DF7 /* VBAppDelegate.m in Sources */,
+				8338CA6D191C4D7F003450C2 /* VBPlayerCVC.m in Sources */,
 				837CC3D418EE1FA200BB7DF7 /* VBViewController.m in Sources */,
 				837CC3CA18EE1FA200BB7DF7 /* main.m in Sources */,
-				839A581D1905DD6E00512E52 /* Player.m in Sources */,
+				83980EE5191D9AEA001C205E /* VBStatCVCell.m in Sources */,
+				833A22A11919A43900626A12 /* Stats+Create.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -397,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;

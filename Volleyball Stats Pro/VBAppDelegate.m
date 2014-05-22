@@ -15,13 +15,13 @@
 - (void)loadStateData
 {
     // load player here.
-    [Player createPlayerWithName:@"Chen" firstName:@"Kolya" jerseyNumber:@12 position:@"OH" managedObjectContext:self.managedObjectContext];
-    [Player createPlayerWithName:@"Hanohano" firstName:@"Ha'aheo" jerseyNumber:@15 position:@"MB" managedObjectContext:self.managedObjectContext];
-    [Player createPlayerWithName:@"Wong" firstName:@"Michael" jerseyNumber:@3 position:@"L" managedObjectContext:self.managedObjectContext];
-    [Player createPlayerWithName:@"Torres" firstName:@"Jesse" jerseyNumber:@8 position:@"OPP" managedObjectContext:self.managedObjectContext];
-    [Player createPlayerWithName:@"Carrier" firstName:@"Dustin" jerseyNumber:@4 position:@"OH" managedObjectContext:self.managedObjectContext];
-    [Player createPlayerWithName:@"Perry" firstName:@"Trevor" jerseyNumber:@23 position:@"MB" managedObjectContext:self.managedObjectContext];
-    [Player createPlayerWithName:@"Kaa" firstName:@"Pono" jerseyNumber:@16 position:@"S" managedObjectContext:self.managedObjectContext];
+    [Player createPlayerWithName:@"Chen" firstName:@"Kolya" jerseyNumber:@12 position:@"Outside Hitter" heightFeet:@6 heightInches:@0 managedObjectContext:self.managedObjectContext];
+    [Player createPlayerWithName:@"Hanohano" firstName:@"Ha'aheo" jerseyNumber:@15 position:@"Middle Blocker" heightFeet:@5 heightInches:@8 managedObjectContext:self.managedObjectContext];
+    [Player createPlayerWithName:@"Wong" firstName:@"Michael" jerseyNumber:@3 position:@"Libero" heightFeet:@5 heightInches:@4 managedObjectContext:self.managedObjectContext];
+    [Player createPlayerWithName:@"Torres" firstName:@"Jesse" jerseyNumber:@8 position:@"Opposite Hitter" heightFeet:@5 heightInches:@10 managedObjectContext:self.managedObjectContext];
+    [Player createPlayerWithName:@"Carrier" firstName:@"Dustin" jerseyNumber:@4 position:@"Outside Hitter" heightFeet:@6 heightInches:@2 managedObjectContext:self.managedObjectContext];
+    [Player createPlayerWithName:@"Perry" firstName:@"Trevor" jerseyNumber:@23 position:@"Middle Blocker" heightFeet:@6 heightInches:@0 managedObjectContext:self.managedObjectContext];
+    [Player createPlayerWithName:@"Kaa" firstName:@"Pono" jerseyNumber:@16 position:@"Setter" heightFeet:@6 heightInches:@1 managedObjectContext:self.managedObjectContext];
 }
 
 - (void)documentIsReady

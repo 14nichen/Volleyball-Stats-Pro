@@ -1,25 +1,27 @@
 //
-//  VBPlayerTVC.m
+//  VBStatsHistoryTVC.m
 //  Volleyball Stats Pro
 //
-//  Created by Nikolai Chen on 4/29/14.
+//  Created by Nikolai Chen on 5/16/14.
 //  Copyright (c) 2014 Nikolai Chen. All rights reserved.
 //
 
-#import "VBPlayerTVC.h"
-#import "VBAppDelegate.h"
+#import "VBStatsHistoryTVC.h"
 #import "Player+Create.h"
 
-@interface VBPlayerTVC ()
-@property (weak, nonatomic) IBOutlet UILabel *jerseyLabel;
-@property (weak, nonatomic) IBOutlet UILabel *lastNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *positionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *heightLabel;
+@interface VBStatsHistoryTVC ()
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *killsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *digsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *assistsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *blocksLabel;
+@property (weak, nonatomic) IBOutlet UILabel *acesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end
 
-@implementation VBPlayerTVC
+@implementation VBStatsHistoryTVC
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,20 +35,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.lastNameLabel.text = self.player.last_name;
-    self.firstNameLabel.text = self.player.first_name;
-    self.jerseyLabel.text = [NSString stringWithFormat:@"%i", [self.player.jersey_number intValue]];
-    self.positionLabel.text = self.player.position;
-    self.heightLabel.text = [self.player humanHeight];
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    NSDictionary *allStats = nil;
+    if (!self.game) {
+        allStats = [self.player allStats];
+        NSLog(@"All stats loaded %@", allStats);
+    } else {
+        Stats *stats = [self.player statsWithGame:self.game];
+        if (!stats) {
+            allStats = [Player totalsForStatsArray:@[]];
+        } else {
+            allStats = [Player totalsForStatsArray:@[stats]];
+        }
+        NSLog(@"One game stats loaded %@", allStats);
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+        self.dateLabel.text = [dateFormatter stringFromDate:self.game.date];
+    }
+    self.nameLabel.text = self.player.fullName;
+    self.killsLabel.text = [NSString stringWithFormat:@"Kills: %i", [allStats[@"kills"] intValue]];
+    self.digsLabel.text = [NSString stringWithFormat:@"Digs: %i", [allStats[@"digs"] intValue]];
+    self.assistsLabel.text = [NSString stringWithFormat:@"Assists: %i", [allStats[@"assists"] intValue]];
+    self.blocksLabel.text = [NSString stringWithFormat:@"Blocks: %i", [allStats[@"blocks"] intValue]];
+    self.acesLabel.text = [NSString stringWithFormat:@"Aces: %i", [allStats[@"aces"] intValue]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,11 +66,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)setPlayer:(Player *)player
-{
-    _player = player;
-    
-}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

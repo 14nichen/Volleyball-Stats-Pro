@@ -1,18 +1,17 @@
 //
-//  VBPlayerTVC.h
+//  VBTeamTVC.h
 //  Volleyball Stats Pro
 //
-//  Created by Nikolai Chen on 4/29/14.
+//  Created by Nikolai Chen on 4/30/14.
 //  Copyright (c) 2014 Nikolai Chen. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-@class Player;
+#import "Game.h"
 
-@interface VBPlayerTVC : UITableViewController
+@interface VBTeamTVC : UITableViewController
 
 @property (strong, nonatomic) NSManagedObjectContext *context;
-@property (strong, nonatomic) Player *player;
-
+@property (strong, nonatomic) Game *game;
 
 @end

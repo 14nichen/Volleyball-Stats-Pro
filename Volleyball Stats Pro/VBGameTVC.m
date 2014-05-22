@@ -1,25 +1,23 @@
 //
-//  VBPlayerTVC.m
+//  VBGameTVC.m
 //  Volleyball Stats Pro
 //
-//  Created by Nikolai Chen on 4/29/14.
+//  Created by Nikolai Chen on 5/16/14.
 //  Copyright (c) 2014 Nikolai Chen. All rights reserved.
 //
 
-#import "VBPlayerTVC.h"
+#import "VBGameTVC.h"
+#import "Game+Create.h"
 #import "VBAppDelegate.h"
-#import "Player+Create.h"
+#import "VBTeamTVC.h"
 
-@interface VBPlayerTVC ()
-@property (weak, nonatomic) IBOutlet UILabel *jerseyLabel;
-@property (weak, nonatomic) IBOutlet UILabel *lastNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *positionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *heightLabel;
+@interface VBGameTVC ()
+
+@property (strong, nonatomic) NSArray *games;
 
 @end
 
-@implementation VBPlayerTVC
+@implementation VBGameTVC
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,20 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.lastNameLabel.text = self.player.last_name;
-    self.firstNameLabel.text = self.player.first_name;
-    self.jerseyLabel.text = [NSString stringWithFormat:@"%i", [self.player.jersey_number intValue]];
-    self.positionLabel.text = self.player.position;
-    self.heightLabel.text = [self.player humanHeight];
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    VBAppDelegate *delegate=[UIApplication sharedApplication].delegate;
+    self.context=delegate.managedObjectContext;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,22 +42,45 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)setPlayer:(Player *)player
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    _player = player;
-    
+    return 1;
 }
 
-/*
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.games count];
+}
+
+- (void)setContext:(NSManagedObjectContext *)context
+{
+    _context = context;
+    self.games = [Game allGamesInManagedObjectContext:self.context];
+    [self.tableView reloadData];
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Game" forIndexPath:indexPath];
+    Game *game = self.games[indexPath.row];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    cell.textLabel.text = [dateFormatter stringFromDate:game.date];
     return cell;
 }
-*/
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    Game *game = self.games[[self.tableView indexPathForSelectedRow].row];
+    if ([segue.identifier isEqualToString:@"Go to Team"]) {
+        VBTeamTVC *vc = (VBTeamTVC*)segue.destinationViewController;
+        vc.game = game;
+    }}
+
+
 
 /*
 // Override to support conditional editing of the table view.

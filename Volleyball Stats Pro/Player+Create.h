@@ -7,10 +7,16 @@
 //
 
 #import "Player.h"
+#import "Game.h"
 
 @interface Player (Create)
 
-+ (Player *)createPlayerWithName:(NSString *)lastName firstName:(NSString *)firstName jerseyNumber:(NSNumber*)jerseyNumber position:(NSString *)position managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
++ (Player *)createPlayerWithName:(NSString *)lastName firstName:(NSString *)firstName jerseyNumber:(NSNumber*)jerseyNumber position:(NSString *)position heightFeet:(NSNumber *)heightFeet heightInches:(NSNumber *)heightInches managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 + (NSArray *)allPlayersInManagedObjectContext:(NSManagedObjectContext *)context;
+- (NSString *)humanHeight;
+- (NSString *)fullName;
+- (Stats *) statsWithGame:(Game *) game;
+- (NSDictionary *) allStats;
++ (NSDictionary *)totalsForStatsArray:(NSArray *)statsArray;
 
 @end
