@@ -18,6 +18,9 @@
 
 @implementation VBPlayerEditCell
 
+
+#pragma mark - Load Players
+
 - (void)setPlayer:(Player *)player
 {
     if (_player != player) {
@@ -28,6 +31,15 @@
     }
     [self updateButtons];
 }
+
+- (void)awakeFromNib
+{
+    // Initialization code
+    [self updateButtons];
+}
+
+
+#pragma mark - Detect / Display Changes
 
 - (BOOL)isExistingPlayer
 {
@@ -60,7 +72,37 @@
 
 - (IBAction)textFieldEditingChanged:(UITextField *)sender
 {
-    NSLog(@"change: %@", sender.text);
+    [self updateButtons];
+}
+
+
+#pragma mark - Save Changes
+
+- (void)createPlayer
+{
+    
+}
+
+- (void)updateExistingPlayer
+{
+    self.player.last_name = self.lastNameTextField.text;
+    self.player.first_name = self.firstNameTextField.text;
+    self.player.jersey_number = @([self.jerseyNumTextField.text integerValue]);
+}
+
+- (IBAction)savePressed:(UIButton *)sender
+{
+    if ([self textFieldsChanged]) {
+        if ([self isExistingPlayer]) {
+            [self updateExistingPlayer];
+        } else {
+            [self createPlayer];
+        }
+    }
+    
+    [self.lastNameTextField resignFirstResponder];
+    [self.firstNameTextField resignFirstResponder];
+    [self.jerseyNumTextField resignFirstResponder];
     [self updateButtons];
 }
 
@@ -72,12 +114,6 @@
 //    }
 //    return self;
 //}
-
-- (void)awakeFromNib
-{
-    // Initialization code
-    [self updateButtons];
-}
 
 //- (void)setSelected:(BOOL)selected animated:(BOOL)animated
 //{

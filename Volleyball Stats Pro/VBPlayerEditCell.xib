@@ -19,6 +19,9 @@
                         <state key="normal" title="save">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="savePressed:" destination="qeI-wh-olP" eventType="touchUpInside" id="hpk-JK-5hf"/>
+                        </connections>
                     </button>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XVj-1S-UXz">
                         <rect key="frame" x="235" y="7" width="213" height="30"/>
