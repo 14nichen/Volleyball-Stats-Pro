@@ -55,9 +55,11 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="editButton" destination="A4A-wd-hXU" id="DP2-8V-UGf"/>
                 <outlet property="firstNameTextField" destination="XVj-1S-UXz" id="VKS-R5-Dg1"/>
                 <outlet property="jerseyNumTextField" destination="9kT-66-lKo" id="Hzm-St-hcX"/>
                 <outlet property="lastNameTextField" destination="Abr-Q5-bqz" id="nS5-0a-8Qd"/>
+                <outlet property="saveButton" destination="pzh-Au-1bo" id="uvT-pN-ZnS"/>
             </connections>
         </tableViewCell>
     </objects>

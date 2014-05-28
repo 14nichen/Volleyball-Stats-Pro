@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *jerseyNumTextField;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
 @end
 
 @implementation VBPlayerEditCell
@@ -25,6 +27,24 @@
         self.firstNameTextField.text = player.first_name;
         self.jerseyNumTextField.text = [player.jersey_number stringValue];
     }
+    [self updateButtons];
+}
+
+- (BOOL)isExistingPlayer
+{
+    return (BOOL)self.player;
+}
+
+- (void)updateButtons
+{
+    self.saveButton.enabled = NO;
+    self.editButton.enabled = NO;
+    
+    if ([self isExistingPlayer]) {
+        self.editButton.enabled = YES;
+    } else {
+        self.saveButton.enabled = YES;
+    }
 }
 
 //- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -35,12 +55,13 @@
 //    }
 //    return self;
 //}
-//
-//- (void)awakeFromNib
-//{
-//    // Initialization code
-//}
-//
+
+- (void)awakeFromNib
+{
+    // Initialization code
+    [self updateButtons];
+}
+
 //- (void)setSelected:(BOOL)selected animated:(BOOL)animated
 //{
 //    [super setSelected:selected animated:animated];
