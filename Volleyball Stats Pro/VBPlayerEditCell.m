@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *jerseyNumTextField;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
-@property (weak, nonatomic) IBOutlet UIButton *editButton;
 @end
 
 @implementation VBPlayerEditCell
@@ -35,16 +34,34 @@
     return (BOOL)self.player;
 }
 
+- (BOOL)textFieldsChanged
+{
+    BOOL isChanged = NO;
+    if ([self isExistingPlayer]) {
+        isChanged = ![self.lastNameTextField.text isEqualToString:self.player.last_name] ||
+        ![self.firstNameTextField.text isEqualToString:self.player.first_name] ||
+        ![self.jerseyNumTextField.text isEqualToString:[self.player.jersey_number stringValue]];
+    
+    } else {
+        isChanged = (self.lastNameTextField.text && ![self.lastNameTextField.text isEqualToString:@""]) ||
+        (self.firstNameTextField.text && ![self.firstNameTextField.text isEqualToString:@""]) ||
+        (self.jerseyNumTextField.text && ![self.jerseyNumTextField.text isEqualToString:@""]);
+    }
+    return isChanged;
+}
+
 - (void)updateButtons
 {
     self.saveButton.enabled = NO;
-    self.editButton.enabled = NO;
-    
-    if ([self isExistingPlayer]) {
-        self.editButton.enabled = YES;
-    } else {
+    if ([self textFieldsChanged]) {
         self.saveButton.enabled = YES;
     }
+}
+
+- (IBAction)textFieldEditingChanged:(UITextField *)sender
+{
+    NSLog(@"change: %@", sender.text);
+    [self updateButtons];
 }
 
 //- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
