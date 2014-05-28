@@ -113,6 +113,7 @@
 		CFF2423319355B53007EFCF4 /* VBPlayerEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBPlayerEditCell.m; sourceTree = "<group>"; };
 		CFF2423519358B49007EFCF4 /* VBPlayerEditTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBPlayerEditTVC.h; sourceTree = "<group>"; };
 		CFF2423619358B49007EFCF4 /* VBPlayerEditTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBPlayerEditTVC.m; sourceTree = "<group>"; };
+		CFF242381935A2CB007EFCF4 /* VBPlayerEditCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBPlayerEditCellDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +183,7 @@
 				CFF2423019355A0D007EFCF4 /* VBPlayerEditCell.xib */,
 				CFF2423219355B53007EFCF4 /* VBPlayerEditCell.h */,
 				CFF2423319355B53007EFCF4 /* VBPlayerEditCell.m */,
+				CFF242381935A2CB007EFCF4 /* VBPlayerEditCellDelegate.h */,
 				839A58181905DB6F00512E52 /* Player.xcdatamodeld */,
 				837CC3D218EE1FA200BB7DF7 /* VBViewController.h */,
 				837CC3D318EE1FA200BB7DF7 /* VBViewController.m */,

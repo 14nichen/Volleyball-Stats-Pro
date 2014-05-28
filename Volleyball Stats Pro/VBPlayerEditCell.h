@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VBPlayerEditCellDelegate.h"
 @class Player;
 
 @interface VBPlayerEditCell : UITableViewCell
 @property (strong, nonatomic) Player *player;
+@property (weak, nonatomic) id<VBPlayerEditCellDelegate> delegate;
 @end

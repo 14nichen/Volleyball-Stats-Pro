@@ -8,6 +8,7 @@
 
 #import "VBPlayerEditCell.h"
 #import "Player.h"
+#import "VBAppDelegate.h"
 
 @interface VBPlayerEditCell ()
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
@@ -80,7 +81,12 @@
 
 - (void)createPlayer
 {
-    
+    if ([self.delegate respondsToSelector:@selector(playerEditCell:createPlayerWithLastName:firstName:jerseyNumber:)]) {
+        [self.delegate playerEditCell:self
+             createPlayerWithLastName:self.lastNameTextField.text
+                            firstName:self.firstNameTextField.text
+                         jerseyNumber:@([self.jerseyNumTextField.text integerValue])];
+    }
 }
 
 - (void)updateExistingPlayer

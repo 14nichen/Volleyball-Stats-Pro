@@ -14,7 +14,7 @@
 static const NSInteger kMaxNumPlayersShown = 20;
 static NSString *kPlayerEditCellId = @"Player Edit Cell";
 
-@interface VBPlayerEditTVC ()
+@interface VBPlayerEditTVC () <VBPlayerEditCellDelegate>
 @property (nonatomic, strong) NSManagedObjectContext *context;
 @property (nonatomic, strong) NSMutableArray *players;
 @end
@@ -69,11 +69,21 @@ static NSString *kPlayerEditCellId = @"Player Edit Cell";
          forCellReuseIdentifier:kPlayerEditCellId];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - Player Edit Cell Delegate
+
+- (void)playerEditCell:(VBPlayerEditCell *)cell createPlayerWithLastName:(NSString *)lastName firstName:(NSString *)firstName jerseyNumber:(NSNumber *)jerseyNumber
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    Player *p = [Player createPlayerWithName:lastName
+                                   firstName:firstName
+                                jerseyNumber:jerseyNumber
+                                    position:@""
+                                  heightFeet:@(0)
+                                heightInches:@(0)
+                        managedObjectContext:self.context];
+    [self.players addObject:p];
+    cell.player = p;
 }
+
 
 #pragma mark - Table view data source
 
@@ -97,9 +107,11 @@ static NSString *kPlayerEditCellId = @"Player Edit Cell";
     if (indexPath.row < [self.players count]) {
         cell.player = self.players[indexPath.row];
     }
+    cell.delegate = self;
     
     return cell;
 }
+
 
 /*
 // Override to support conditional editing of the table view.
