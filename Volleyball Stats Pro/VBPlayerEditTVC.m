@@ -7,12 +7,15 @@
 //
 
 #import "VBPlayerEditTVC.h"
+#import "Player+Create.h"
+#import "VBAppDelegate.h"
 #import "VBPlayerEditCell.h"
 
 static const NSInteger kMaxNumPlayersShown = 20;
 static NSString *kPlayerEditCellId = @"Player Edit Cell";
 
 @interface VBPlayerEditTVC ()
+@property (nonatomic, strong) NSManagedObjectContext *context;
 @property (nonatomic, strong) NSMutableArray *players;
 @end
 
@@ -28,18 +31,27 @@ static NSString *kPlayerEditCellId = @"Player Edit Cell";
 - (NSMutableArray *)players
 {
     if (!_players) {
-        _players = [NSMutableArray array];
+        _players = [NSMutableArray arrayWithArray:[Player allPlayersInManagedObjectContext:self.context]];
         
-        for (int i=0; i<6; i++) {
-            NSString *fName = [NSString stringWithFormat:@"First %i", i];
-            NSString *lName = [NSString stringWithFormat:@"Last %i", i];
-            NSInteger jerseyNum = i;
-            [_players addObject:[VBPlayerEditTVC dummyPlayerWithFName:fName
-                                                                lName:lName
-                                                            jerseyNum:jerseyNum]];
-        }
+//        for (int i=0; i<6; i++) {
+//            NSString *fName = [NSString stringWithFormat:@"First %i", i];
+//            NSString *lName = [NSString stringWithFormat:@"Last %i", i];
+//            NSInteger jerseyNum = i;
+//            [_players addObject:[VBPlayerEditTVC dummyPlayerWithFName:fName
+//                                                                lName:lName
+//                                                            jerseyNum:jerseyNum]];
+//        }
     }
     return _players;
+}
+
+- (NSManagedObjectContext *)context
+{
+    if (!_context) {
+        VBAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+        _context = appDelegate.managedObjectContext;
+    }
+    return _context;
 }
 
 - (void)viewDidLoad

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Player;
 
 @interface VBPlayerEditCell : UITableViewCell
-@property (strong, nonatomic) NSDictionary *player;
+@property (strong, nonatomic) Player *player;
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "VBPlayerEditCell.h"
+#import "Player.h"
 
 @interface VBPlayerEditCell ()
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
@@ -16,13 +17,13 @@
 
 @implementation VBPlayerEditCell
 
-- (void)setPlayer:(NSDictionary *)player
+- (void)setPlayer:(Player *)player
 {
     if (_player != player) {
         _player = player;
-        self.lastNameTextField.text = _player[@"last_name"];
-        self.firstNameTextField.text = _player[@"first_name"];
-        self.jerseyNumTextField.text = [_player[@"jersey_number"] stringValue];
+        self.lastNameTextField.text = player.last_name;
+        self.firstNameTextField.text = player.first_name;
+        self.jerseyNumTextField.text = [player.jersey_number stringValue];
     }
 }
 
