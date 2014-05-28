@@ -39,6 +39,9 @@
 		83DCCD7D19106BF000A4DC6E /* VBPlayerTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DCCD7C19106BF000A4DC6E /* VBPlayerTVC.m */; };
 		83F49F051926E1090016071C /* VBStatsHistoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F49F041926E1090016071C /* VBStatsHistoryTVC.m */; };
 		83F49F081926E7840016071C /* VBGameTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F49F071926E7840016071C /* VBGameTVC.m */; };
+		CFF2423119355A0D007EFCF4 /* VBPlayerEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF2423019355A0D007EFCF4 /* VBPlayerEditCell.xib */; };
+		CFF2423419355B53007EFCF4 /* VBPlayerEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF2423319355B53007EFCF4 /* VBPlayerEditCell.m */; };
+		CFF2423719358B49007EFCF4 /* VBPlayerEditTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF2423619358B49007EFCF4 /* VBPlayerEditTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,11 @@
 		83F49F041926E1090016071C /* VBStatsHistoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBStatsHistoryTVC.m; sourceTree = "<group>"; };
 		83F49F061926E7840016071C /* VBGameTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBGameTVC.h; sourceTree = "<group>"; };
 		83F49F071926E7840016071C /* VBGameTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBGameTVC.m; sourceTree = "<group>"; };
+		CFF2423019355A0D007EFCF4 /* VBPlayerEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VBPlayerEditCell.xib; sourceTree = "<group>"; };
+		CFF2423219355B53007EFCF4 /* VBPlayerEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBPlayerEditCell.h; sourceTree = "<group>"; };
+		CFF2423319355B53007EFCF4 /* VBPlayerEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBPlayerEditCell.m; sourceTree = "<group>"; };
+		CFF2423519358B49007EFCF4 /* VBPlayerEditTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBPlayerEditTVC.h; sourceTree = "<group>"; };
+		CFF2423619358B49007EFCF4 /* VBPlayerEditTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBPlayerEditTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +177,11 @@
 				837CC3CC18EE1FA200BB7DF7 /* VBAppDelegate.h */,
 				837CC3CD18EE1FA200BB7DF7 /* VBAppDelegate.m */,
 				837CC3CF18EE1FA200BB7DF7 /* Main.storyboard */,
+				CFF2423519358B49007EFCF4 /* VBPlayerEditTVC.h */,
+				CFF2423619358B49007EFCF4 /* VBPlayerEditTVC.m */,
+				CFF2423019355A0D007EFCF4 /* VBPlayerEditCell.xib */,
+				CFF2423219355B53007EFCF4 /* VBPlayerEditCell.h */,
+				CFF2423319355B53007EFCF4 /* VBPlayerEditCell.m */,
 				839A58181905DB6F00512E52 /* Player.xcdatamodeld */,
 				837CC3D218EE1FA200BB7DF7 /* VBViewController.h */,
 				837CC3D318EE1FA200BB7DF7 /* VBViewController.m */,
@@ -334,6 +347,7 @@
 				837CC3D618EE1FA200BB7DF7 /* Images.xcassets in Resources */,
 				837CC3C818EE1FA200BB7DF7 /* InfoPlist.strings in Resources */,
 				83980EE2191D9A46001C205E /* VBStatCVCell.xib in Resources */,
+				CFF2423119355A0D007EFCF4 /* VBPlayerEditCell.xib in Resources */,
 				837CC3D118EE1FA200BB7DF7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +371,7 @@
 				839A582D1905DEAC00512E52 /* Player+Create.m in Sources */,
 				83DCCD7D19106BF000A4DC6E /* VBPlayerTVC.m in Sources */,
 				83988AA41911BA4E0000FE95 /* VBTeamTVC.m in Sources */,
+				CFF2423719358B49007EFCF4 /* VBPlayerEditTVC.m in Sources */,
 				83389AB8192C18D800A7E9BF /* Team+Create.m in Sources */,
 				83F49F051926E1090016071C /* VBStatsHistoryTVC.m in Sources */,
 				83A95BA31925494800F966A7 /* VBStatsTVC.m in Sources */,
@@ -364,6 +379,7 @@
 				83389ABE192C1BBC00A7E9BF /* Team.m in Sources */,
 				839A581A1905DB6F00512E52 /* Player.xcdatamodeld in Sources */,
 				8363F89B19185317003DE4FA /* Game+Create.m in Sources */,
+				CFF2423419355B53007EFCF4 /* VBPlayerEditCell.m in Sources */,
 				838B5CA6192C2851001DF6F8 /* VBMenuVC.m in Sources */,
 				83389AB5192C18B000A7E9BF /* Stats.m in Sources */,
 				83F49F081926E7840016071C /* VBGameTVC.m in Sources */,
